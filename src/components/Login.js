@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import GoogleLogin from 'react-google-login'
+import auth from './auth'
 import './login.css'
 
 export class Login extends Component {
@@ -14,6 +15,7 @@ export class Login extends Component {
             
         }
     }
+    
     handleSubmit = (e) => {
        e.preventDefault()
        const data = {
@@ -32,7 +34,7 @@ export class Login extends Component {
             document.querySelector('.emailiderror').innerHTML = `` 
        }
        if(data.password === ''){
-            document.querySelector('.password').innerHTML = `<p>Either password field is empty or passwords didn't match. <p>`
+            document.querySelector('.password').innerHTML = `<p>Password field is empty please type again. <p>`
             return
        } else {
             document.querySelector('.password').innerHTML = ``
@@ -41,6 +43,9 @@ export class Login extends Component {
     
        document.querySelector('.success').innerHTML = `<p>Form submitted successfully</p>`
        console.log(data)
+       auth.login(() => {
+           this.props.history.push('./dashboard')
+       })
     }
     responseGoogle = (response) => {
         console.log(response.profileObj)
@@ -53,7 +58,9 @@ export class Login extends Component {
         googleName: this.state.googleName,
        }
        console.log(data)
-       this.props.toggleLogin()
+       auth.login(() => {
+        this.props.history.push('./dashboard')
+       })
        
     }
     

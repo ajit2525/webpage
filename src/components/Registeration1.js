@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import GoogleLogin from 'react-google-login'
+import auth from './auth'
 import './registeration1.css';
 
 export class Registeration1 extends Component {
@@ -54,6 +55,9 @@ export class Registeration1 extends Component {
     
        document.querySelector('.success').innerHTML = `<p>Form submitted successfully</p>`
        console.log(data)
+       auth.login(() => {
+        this.props.history.push('./dashboard')
+       })
     }
     responseGoogle = (response) => {
       // console.log(response.profileObj)
@@ -66,6 +70,9 @@ export class Registeration1 extends Component {
         googleName: this.state.googleName,
       }
       console.log(data)
+      auth.login(() => {
+        this.props.history.push('./dashboard')
+      })
     }
 
 
