@@ -1,0 +1,74 @@
+.flex-container {
+    display: flex;
+    margin: 0 auto;
+}
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    margin-top: 120px;
+    padding: 20px;
+    width: 50%;
+}
+.flex-container > .image {
+    background-image: url("../utils/25602546.jpg");
+    background-color: #cccccc;
+    
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    
+}
+.flex-container > .outerDiv {
+    background-color: #ffffff;
+}
+
+.flex-container > div > .form {
+    /* border: 1px solid red; */
+    margin: 30px auto;
+    text-align:center;
+    background-color: #ffffff;
+    
+}
+.flex-container > div > .form > input {
+    width: 277px;
+    height: 35px;
+    background-color:#4186E1;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.flex-container > div > .form > .form-control {
+    /* border: 1px solid rgb(0, 255, 85); */
+    margin:auto;
+    background-color: #ffffff;
+}
+.flex-container > div > .form > .form-control > input {
+    width: 270px;
+    height: 35px;
+}
+.flex-container > div > .form > .form-control > div > label {
+  
+}
+span{
+    color:#4186E1;
+}
+.error {
+    color: red
+}
+.success {
+    color: green
+}
+
+
+.linkDiv{
+    display: flex;
+    flex-direction: column;
+}
+.active_class {
+    color: rgb(4, 0, 255);
+    font-weight: bold;
+    text-decoration: none;
+}
+.link {
+    text-decoration: none;
+}
